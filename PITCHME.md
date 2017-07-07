@@ -36,8 +36,12 @@ Swift と Kotlin
 +++
 
 * 静的型付け
+* 型推論
 * Null safe
-* interface の default implement
+* interface が default implement を持てる
+* Object 指向
+* 関数プログラミング
+* Generics
 * ...
 
 +++
@@ -157,12 +161,6 @@ val list = listOf(1, 2, 3)
 ```kotlin
 val list: List<Int> = listOf(1, 2, 3)
 ```
-
-+++
-
-```kotlin
-val list: List<Int> = listOf(1, 2, 3)
-```
 @[1](`listOf` を見てみよう)
 
 +++?code=assets/codes/listOf.kt
@@ -185,7 +183,7 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 // 略
 }
 ```
-`object`...?
+@[1](`object`...?)
 
 +++
 
@@ -200,16 +198,19 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 // 略
 }
 ```
-`List<Nothing>`
+@[1](`List<Nothing>`)
 
 +++
 
-Swift の経験から、型パラメータの部分は要素だろうなと推測できる( ˘ω˘)
+Swift の Array と同様、  
+型パラメータの部分は要素と予想できる
 
-+++assets/codes/list.kt
-
-+++assets/codes/list.kt
++++?assets/codes/list.kt
 @[6](`out`...?)
+
++++
+
+
 
 +++
 
