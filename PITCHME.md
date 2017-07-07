@@ -1,5 +1,6 @@
-### Swift と Kotlin
-2017/7/8 yidev  
+### Swift と Kotlin、異文化旅行
+2017/7/8   
+#yidev  
 ezura
 
 ---
@@ -7,6 +8,32 @@ ezura
 #### "\self"
 * ezura
 * iOS engineer @ LINE
+
+---
+
+### Kotlin
+
++++
+
+### Kotlin
+Android で公式にサポート  
+ちょっと気になる存在…
+
++++
+
+### Swift と Kotlin
+
++++
+
+### 似てるの？？
+
++++
+
+### 確かに、構文が似てる(ところもある)
+
++++
+
+* 静的型付け
 
 ---
 
