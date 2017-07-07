@@ -1,4 +1,12 @@
 ### Swift と Kotlin
+2017/7/8 yidev
+ezura
+
+---
+
+#### "\self"
+* ezura
+* iOS engineer @ LINE
 
 ---
 
