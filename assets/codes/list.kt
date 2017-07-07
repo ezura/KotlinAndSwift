@@ -4,5 +4,11 @@
  * @param E the type of elements contained in the list. The list is covariant on its element type.
  */
 public interface List<out E> : Collection<E> {
-// 略
+    // Query Operations
+    override val size: Int
+
+    override fun isEmpty(): Boolean
+    override fun contains(element: @UnsafeVariance E): Boolean
+    override fun iterator(): Iterator<E>
+  ...
 }
