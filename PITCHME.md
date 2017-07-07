@@ -138,6 +138,17 @@ let v = Destination(source)
 
 ---
 
+### 具体的な違い
+  * Type hierarchy
+  * ~~Value type~~
+  * Variant
+  * Singleton
+
++++
+
+#### Type hierarchy
+---?assets/images/TypeHierarchy.png
+
 #### とても良かった記事
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
 * [Android開発を受注したからKotlinをガッツリ使ってみたら最高だった](http://qiita.com/omochimetaru/items/98e015b0b694dd97f323)
