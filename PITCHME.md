@@ -161,7 +161,8 @@ val list: List<Int> = listOf(1, 2, 3)
 
 ```kotlin
 val list: List<Int> = listOf(1, 2, 3)
-```@[1]
+```
+@[1]
 
 ---
 
@@ -245,7 +246,8 @@ object Type { ... }
 のとき  
 `MyBox<Any>` ~~<-~~ `MyBox<Int>`
 
-Swift は基本的にはこれ (Array, Optional 等、一部の型以外)
+<aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
+<aside>Kotlin の　Array は要素に対して不変</aside>
 
 +++
 
