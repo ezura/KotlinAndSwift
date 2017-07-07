@@ -1,5 +1,4 @@
-### Swift と Kotlin  
-異文化旅行記
+### Swift と Kotlin 異文化旅行記
 2017/7/8   
 \#yidev  
 ezura
