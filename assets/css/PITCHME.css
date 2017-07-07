@@ -2,6 +2,7 @@ aside {
     color: grey;
     ffont-size: 0.2em;
 }
+img { border: none; }
 
 .reveal .slides {
     text-align: left;
