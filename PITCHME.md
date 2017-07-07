@@ -1,4 +1,4 @@
-### Swift と Kotlin 異文化旅行記
+### Swift と Kotlin 異文化旅行
 2017/7/8   
 \#yidev  
 ezura
@@ -49,7 +49,7 @@ Swift と Kotlin
 ~~一歩進むたびに~~  
 もはや足をあげるところから  
 違いに出会う世界 😇  
-(構文というより、設計の面で…)
+(設計の面で…)
 
 +++
 
@@ -60,12 +60,11 @@ Swift と Kotlin
 
 ### index
 * Kotlin はどんな言語？
-* List ツアー
+* 標準ライブラリ 有名観光地ツアー
   * Type hierarchy
-  * ~~Value type~~
+  * Top Type: class Any
   * Variant
   * Singleton
-* おまけ
 
 ---
 
@@ -134,6 +133,35 @@ fun Destination(v: Source): Destination {
 let v = Destination(source)
 ```
 <aside>こういう方法もあるらしい…</aside>
+
+---
+
+### 標準ライブラリ 有名観光地ツアー
+
++++
+
+### List
+<aside>Kotlin にも Array はあるけれど  
+機能的には List の方が Swift の Array に近い部分が多い。</aside>
+<aside>List の方がポピュラー</aside>
+
++++
+
+```kotlin
+val list = listOf(1, 2, 3)
+```
+
++++
+
+```kotlin
+val list: List<Int> = listOf(1, 2, 3)
+```
+
++++
+
+```kotlin
+val list: List<Int> = listOf(1, 2, 3)
+```@[1]
 
 ---
 
