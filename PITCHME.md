@@ -30,10 +30,18 @@ Android で公式にサポート  
 +++
 
 ### 確かに、構文が似てる(ところもある)
+<aside>初めて見たときも親しみやすかった</aside>
 
 +++
 
 * 静的型付け
+* Null safe
+* interface の default implement
+* ...
+
++++
+
+
 
 ---
 
