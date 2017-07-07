@@ -158,17 +158,16 @@ let v = Destination(source)
 
 +++
 
-#### Any: 全ての型の super type
-#### Nothing: 全ての型の sub type
+* Any: 全ての型の super type
+* Nothing: 全ての型の sub type
 
 +++
 
 ### Any
-#### kotlin
-class
-
-#### Swift
-空の protocol (-> Non-nominal type)
+* kotlin
+  - class
+* Swift
+  - 空の protocol (-> Non-nominal type)
 
 ---
 
