@@ -171,6 +171,7 @@ let v = Destination(source)
 
 ---
 
-#### とても参考になったサイト・記事
+### とても参考になったサイト・記事
+* [Kotlin Reference](https://kotlinlang.org/docs/reference/)
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
 * [Android開発を受注したからKotlinをガッツリ使ってみたら最高だった](http://qiita.com/omochimetaru/items/98e015b0b694dd97f323)
