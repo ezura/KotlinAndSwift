@@ -94,10 +94,12 @@ Swift よりもオブジェクト指向寄りな設計がところどころで�
 +++
 
 ### 演算子
+##### Swift
 ```swift:Swift
 func +(r: Type, l: Type) -> Type { ... }
 ```
 
+##### Kotlin
 ```kotlin:Kotlin
 class Type {
     operator fun plus(v: Type): Type { ... }
@@ -107,6 +109,7 @@ class Type {
 +++
 
 ### 型変換
+##### Swift
 ```swift:Swift
 class Destination {
     init(_ value: Source) { ... }
@@ -114,13 +117,14 @@ class Destination {
 let v = Destination(source)
 ```
 
+##### Kotlin
 ```kotlin:Kotlin
 class Source {
     fun toDestination: Destination { ... }
 }
 val v = source.toDestination
 ```
-(余談: Kotlin は extension で constructor を作れません)
+(余談: Kotlin は extension で constructor を作れない)
 
 ---
 
