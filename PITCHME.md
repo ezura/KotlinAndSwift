@@ -205,24 +205,37 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 Swift の Array と同様、  
 型パラメータの部分は要素と予想できる
 
-+++?assets/codes/list.kt
++++?code=assets/codes/list.kt
 @[6](`out`...?)
 
 +++
 
 
+### Variance annotation
 
 +++
 
-### Variant 宣言
-
----
-
-### Variant
+### Variance
+* invariance
+* covariance
+* contravariance
 
 +++
 
-### 共変の例
+### invariance
+
+`Any` <- `Int`  
+のとき  
+`MyBox<Any>` ~~<-~~ `MyBox<Int>`
+
+<aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
+<aside>ただし、`intout` 指定のときは `Array`, `Optional` も invariance になる</aside>
+
+<aside>Kotlin の　Array は要素に対して不変</aside>
+
++++
+
+### covariance の例
 
 `Any` <- `Int`  
 のとき  
@@ -231,22 +244,11 @@ Swift の Array と同様、
 
 +++
 
-### 反変の例
+### contravariance の例
 
 `Any` <- `Int`  
 のとき  
 `(Int) -> T` <- `(Any) -> T`
-
-+++
-
-### 不変
-
-`Any` <- `Int`  
-のとき  
-`MyBox<Any>` ~~<-~~ `MyBox<Int>`
-
-<aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
-<aside>Kotlin の　Array は要素に対して不変</aside>
 
 +++
 
