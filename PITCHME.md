@@ -88,7 +88,8 @@ Swift と Kotlin
 
 +++
 
-Swift よりもオブジェクト指向寄りな設計が散見 (注: 私見)
+Swift よりもオブジェクト指向寄りな設計がところどころで見えるような…？  
+(注: 私見)
 
 +++
 
@@ -102,6 +103,8 @@ class Type {
     operator fun plus(v: Type): Type { ... }
 }
 ```
+
++++
 
 ### 型変換
 ```swift:Swift
@@ -117,6 +120,7 @@ class Source {
 }
 val v = source.toDestination
 ```
+(余談: Kotlin は extension で constructor を作れません)
 
 ---
 
