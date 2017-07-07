@@ -11,7 +11,7 @@ ezura
 
 ---
 
-### Kotlin
+Kotlin
 
 +++
 
@@ -20,7 +20,7 @@ Android で公式にサポート  
 
 +++
 
-#### Swift と Kotlin
+Swift と Kotlin
 
 +++
 
@@ -62,15 +62,21 @@ Android で公式にサポート  
 * Kotlin はどんな言語？
 * 具体的な違い (数種)
   * Type hierarchy
-  * × Value type
+  * ~~Value type~~
   * Variant
   * Singleton
 * 上記の盛り合わせ + α
 * おまけ
 
-+++
+---
 
-Swift　と Kotlin は似てる？？
+### Kotlin
+* 静的型付け
+* null safe
+* Java と 100% 互換
+* オブジェクト指向
+* 関数プログラミング
+
 
 +++
 
