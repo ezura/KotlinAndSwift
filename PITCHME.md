@@ -1,4 +1,5 @@
-### Swift と Kotlin、異文化旅行
+### Swift と Kotlin  
+異文化旅行記
 2017/7/8   
 \#yidev  
 ezura
@@ -60,12 +61,11 @@ Swift と Kotlin
 
 ### index
 * Kotlin はどんな言語？
-* 具体的な違い (数種)
+* List ツアー
   * Type hierarchy
   * ~~Value type~~
   * Variant
   * Singleton
-* 上記の盛り合わせ + α
 * おまけ
 
 ---
