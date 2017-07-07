@@ -5,7 +5,7 @@ ezura
 
 ---
 
-### "\self"
+### \(self)
 * ezura
 * iOS engineer @ LINE
 
@@ -123,7 +123,7 @@ class Source {
 }
 val v = source.toDestination()
 ```
-<aside>余談: Kotlin は extension で constructor を作れない)</aside>
+<aside class='custom'>余談: Kotlin は extension で constructor を作れない)</aside>
 
 +++
 #### 超余談
@@ -196,15 +196,16 @@ object Type { ... }
 
 ### 共変の例
 
-`Any` <- `Int` の関係  
+`Any` <- `Int`  
 のとき  
 `Array<Any>` <- `Array<Int>`
+<aside>Swift の Array</aside>
 
 +++
 
 ### 反変の例
 
-`Any` <- `Int` の関係  
+`Any` <- `Int`  
 のとき  
 `(Int) -> T` <- `(Any) -> T`
 
@@ -212,7 +213,7 @@ object Type { ... }
 
 ### 不変
 
-`Any` <- `Int` の関係  
+`Any` <- `Int`  
 のとき  
 `MyBox<Any>` ~~<-~~ `MyBox<Int>`
 
