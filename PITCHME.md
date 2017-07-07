@@ -122,9 +122,19 @@ let v = Destination(source)
 class Source {
     fun toDestination: Destination { ... }
 }
-val v = source.toDestination
+val v = source.toDestination()
 ```
-(余談: Kotlin は extension で constructor を作れない)
+<aside>余談: Kotlin は extension で constructor を作れない)</aside>
+
++++
+#### 超余談
+```kotlin
+fun Destination(v: Source): Destination {
+    ...
+}
+let v = Destination(source)
+```
+<aside>こういう方法もあるらしい…</aside>
 
 ---
 
