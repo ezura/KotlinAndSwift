@@ -1,4 +1,4 @@
-.reveal section aside*> {
+.reveal section>* aside {
     color: grey;
     ffont-size: 0.5em;
 }
