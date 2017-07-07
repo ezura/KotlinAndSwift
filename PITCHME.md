@@ -168,6 +168,65 @@ let v = Destination(source)
   - class
 * Swift
   - 空の protocol (-> Non-nominal type)
+  
++++
+
+Any は
+* 全ての型の super type
+* **class**
+
+---
+
+### Singleton
+
++++
+
+Singleton を言語の機能で提供
+
++++
+
+```kotlin
+object Type { ... }
+```
+
+---
+
+### Variant
+
++++
+
+### 共変の例
+
+`Any` <- `Int` の関係  
+のとき  
+`Array<Any>` <- `Array<Int>`
+
++++
+
+### 反変の例
+
+`Any` <- `Int` の関係  
+のとき  
+`(Int) -> T` <- `(Any) -> T`
+
++++
+
+### 不変
+
+`Any` <- `Int` の関係  
+のとき  
+`MyBox<Any>` ~~<-~~ `MyBox<Int>`
+
+Swift は基本的にはこれ (Array, Optional 等、一部の型以外)
+
++++
+
+* Swift だと、暗黙的に提供されているもののみ適応
+* Kotlin だと指定できる！
+
+---
+
+いくつかの違い
 
 ---
 
