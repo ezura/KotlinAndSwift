@@ -1,5 +1,5 @@
 ### Swift と Kotlin
-2017/7/8 yidev
+2017/7/8 yidev  
 ezura
 
 ---
