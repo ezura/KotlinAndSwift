@@ -147,7 +147,7 @@ let v = Destination(source)
 +++
 
 #### Type hierarchy
----?assets/images/TypeHierarchy.png
+---?image=assets/images/TypeHierarchy.png
 
 #### とても良かった記事
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
