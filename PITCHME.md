@@ -77,9 +77,46 @@ Swift と Kotlin
 * オブジェクト指向
 * 関数プログラミング
 
++++
+
+### Kotlin
+* 静的型付け
+* null safe
+* Java と 100% 互換
+* **オブジェクト指向**
+* 関数プログラミング
 
 +++
 
+Swift よりもオブジェクト指向寄りな設計が散見 (注: 私見)
+
++++
+
+### 演算子
+```swift:Swift
+func +(r: Type, l: Type) -> Type { ... }
+```
+
+```kotlin:Kotlin
+class Type {
+    operator fun plus(v: Type): Type { ... }
+}
+```
+
+### 型変換
+```swift:Swift
+class Destination {
+    init(_ value: Source) { ... }
+}
+let v = Destination(source)
+```
+
+```kotlin:Kotlin
+class Source {
+    fun toDestination: Destination { ... }
+}
+val v = source.toDestination
+```
 
 ---
 
