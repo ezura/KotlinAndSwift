@@ -1,4 +1,4 @@
-.reveal section>* aside .custom {
+.reveal section>* aside {
     color: grey;
     font-size: 0.5em;
 }
