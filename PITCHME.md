@@ -5,7 +5,7 @@ ezura
 
 ---
 
-### \(self)
+### \\(self)
 * ezura
 * iOS engineer @ LINE
 
@@ -123,7 +123,7 @@ class Source {
 }
 val v = source.toDestination()
 ```
-<aside class='custom'>余談: Kotlin は extension で constructor を作れない)</aside>
+<aside>余談: Kotlin は extension で constructor を作れない)</aside>
 
 +++
 #### 超余談
