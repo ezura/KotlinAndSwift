@@ -8,6 +8,7 @@ ezura
 ### \\(self)
 * ezura
 * iOS engineer @ LINE
+* 話したいことがあり過ぎて発散して資料が着地できなかったので、iosdc 応募ネタの一部のその一部を発表します
 
 ---
 
@@ -164,15 +165,96 @@ val list: List<Int> = listOf(1, 2, 3)
 ```
 @[1](`listOf` を見てみよう)
 
-+++
-
----?code=assets/codes/listOf.kt
++++?code=assets/codes/listOf.kt
 <aside>注: スライド上での見やすさのため、整形しています</aside>
 
++++?code=assets/codes/listOf.kt
+@[6](emptyList...?)
+
 +++
 
----?code=assets/codes/listOf.kt
-@[6](emptyList...?)
+```kotlin
+/** Returns an empty read-only list.  The returned list is serializable (JVM). */
+public fun <T> emptyList(): List<T> = EmptyList
+```
+
++++
+
+```kotlin
+object EmptyList : List<Nothing>, Serializable, RandomAccess {
+// 略
+}
+```
+`object`...?
+
++++
+
+### `Object`
+* Singleton
+* constractor が指定できない以外、class と同様の機能
+
++++
+
+```kotlin
+object EmptyList : List<Nothing>, Serializable, RandomAccess {
+// 略
+}
+```
+`List<Nothing>`
+
++++
+
+Swift の経験から、型パラメータの部分は要素だろうなと推測できる( ˘ω˘)
+
++++assets/codes/list.kt
+
++++assets/codes/list.kt
+@[6](`out`...?)
+
++++
+
+### Variant 宣言
+
+---
+
+### Variant
+
++++
+
+### 共変の例
+
+`Any` <- `Int`  
+のとき  
+`Array<Any>` <- `Array<Int>`
+<aside>Swift の Array</aside>
+
++++
+
+### 反変の例
+
+`Any` <- `Int`  
+のとき  
+`(Int) -> T` <- `(Any) -> T`
+
++++
+
+### 不変
+
+`Any` <- `Int`  
+のとき  
+`MyBox<Any>` ~~<-~~ `MyBox<Int>`
+
+<aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
+<aside>Kotlin の　Array は要素に対して不変</aside>
+
++++
+
+* Swift だと、暗黙的に提供されているもののみ適応
+* Kotlin だと指定できる！
+
++++
+
+
 ---
 
 ### 具体的な違い
@@ -226,42 +308,7 @@ Singleton を言語の機能で提供
 object Type { ... }
 ```
 
----
 
-### Variant
-
-+++
-
-### 共変の例
-
-`Any` <- `Int`  
-のとき  
-`Array<Any>` <- `Array<Int>`
-<aside>Swift の Array</aside>
-
-+++
-
-### 反変の例
-
-`Any` <- `Int`  
-のとき  
-`(Int) -> T` <- `(Any) -> T`
-
-+++
-
-### 不変
-
-`Any` <- `Int`  
-のとき  
-`MyBox<Any>` ~~<-~~ `MyBox<Int>`
-
-<aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
-<aside>Kotlin の　Array は要素に対して不変</aside>
-
-+++
-
-* Swift だと、暗黙的に提供されているもののみ適応
-* Kotlin だと指定できる！
 
 ---
 
