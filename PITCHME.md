@@ -162,8 +162,17 @@ val list: List<Int> = listOf(1, 2, 3)
 ```kotlin
 val list: List<Int> = listOf(1, 2, 3)
 ```
-@[1]
+@[1](`listOf` を見てみよう)
 
++++
+
+---?code=assets/codes/listOf.kt
+<aside>注: スライド上での見やすさのため、整形しています</aside>
+
++++
+
+---?code=assets/codes/listOf.kt
+@[6](emptyList...?)
 ---
 
 ### 具体的な違い
