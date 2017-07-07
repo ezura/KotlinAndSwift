@@ -147,8 +147,31 @@ let v = Destination(source)
 +++
 
 #### Type hierarchy
+
 ![Type hierarchy](assets/images/TypeHierarchy.png)
 
-#### とても良かった記事
++++
+
+#### Type hierarchy
+
+![Type hierarchy](assets/images/TypeHierarchy2.png)
+
++++
+
+#### Any: 全ての型の super type
+#### Nothing: 全ての型の sub type
+
++++
+
+### Any
+#### kotlin
+class
+
+#### Swift
+空の protocol (-> Non-nominal type)
+
+---
+
+#### とても参考になったサイト・記事
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
 * [Android開発を受注したからKotlinをガッツリ使ってみたら最高だった](http://qiita.com/omochimetaru/items/98e015b0b694dd97f323)
