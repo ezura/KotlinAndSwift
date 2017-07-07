@@ -210,7 +210,6 @@ Swift の Array と同様、
 
 +++
 
-
 ### Variance annotation
 
 +++
@@ -229,9 +228,8 @@ Swift の Array と同様、
 `MyBox<Any>` ~~<-~~ `MyBox<Int>`
 
 <aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
-<aside>ただし、`intout` 指定のときは `Array`, `Optional` も invariance になる</aside>
-
-<aside>Kotlin の　Array は要素に対して不変</aside>
+<aside>ただし、`intout` 指定のときは `Array` も invariance になる</aside>
+<aside>(Kotlin の　Array は要素に対して不変)</aside>
 
 +++
 
@@ -244,6 +242,8 @@ Swift の Array と同様、
 
 +++
 
+```
+
 ### contravariance の例
 
 `Any` <- `Int`  
@@ -252,11 +252,34 @@ Swift の Array と同様、
 
 +++
 
+### out, in
+
+```swift
+let outF: () -> Any = { () -> Int in return 1 }
+let inF: (Int) -> Void = { (v: Any) -> Void in print(v) }
+```
+@[1](out)
+@[2](in)
+
++++
+
 * Swift だと、暗黙的に提供されているもののみ適応
 * Kotlin だと指定できる！
 
 +++
 
+### ちょっと余談
+Swift でも、Variance 指定、垣間見える場合がある
+```swift
+func f(_ v: Array<Any>) {}
+func inoutF(_ v: inout Array<Any>) {}
+
+var v: Array<Int> = [1, 2, 3]
+f(v)  // OK
+// error: cannot convert value of type 'Array<Int>' to expected argument type 'inout Array<Any>'
+inoutF(v)  // error
+```
+@[2]
 
 ---
 
