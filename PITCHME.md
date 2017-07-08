@@ -8,7 +8,7 @@ ezura
 ### \\(self)
 * ezura
 * iOS engineer @ LINE
-* iosdc 応募ネタの一つのその一部？
+* <aside>iosdc 応募ネタの一つのその一部？個人的におもしろくてすぐさま誰かに話したかった</aside>
 
 ---
 
