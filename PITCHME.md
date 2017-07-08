@@ -198,7 +198,7 @@ public interface MutableList<E> : List<E>, MutableCollection<E> {
 ```
 @[6]
 `List<E>` を継承した変更可能な `List`
-<aside>Objective-C も同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
+<aside>Objective-C と同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
 
 +++
 
