@@ -117,6 +117,7 @@ class Type {
 class Destination {
     init(_ value: Source) { ... }
 }
+
 let v = Destination(source)
 ```
 
@@ -125,6 +126,7 @@ let v = Destination(source)
 class Source {
     fun toDestination: Destination { ... }
 }
+
 val v = source.toDestination()
 ```
 <aside>余談: Kotlin は extension で constructor を作れない)</aside>
@@ -137,6 +139,7 @@ val v = source.toDestination()
 fun Destination(v: Source): Destination {
     ...
 }
+
 let v = Destination(source)
 ```
 <aside>こういう方法もあるらしい…</aside>
@@ -296,10 +299,11 @@ Kotlin の Any は
 
 ```swift
 let outF: () -> Any = { () -> Int in return 1 }
+
 let inF: (Int) -> Void = { (v: Any) -> Void in print(v) }
 ```
 @[1](型の持つ性質を包含する型なら代替できる)
-@[2](型の持つ性質を超えない型なら代替できる)
+@[3](型の持つ性質を超えない型なら代替できる)
 
 +++
 
@@ -319,7 +323,7 @@ f(v)  // OK
 // error: cannot convert value of type 'Array<Int>' to expected argument type 'inout Array<Any>'
 inoutF(v)  // error
 ```
-@[2]
+@[2](inout)
 
 +++?code=assets/codes/list.kt
 要素に対して `out` 指定することによって  
@@ -339,7 +343,9 @@ Swift での Array のように要素の型を柔軟に扱える
 
 ```kotlin
 class A<in T> { ... }
+
 fun f(v: B<in T>): T { ... }
+
 var v: C<out T> = ...
 ```
 
@@ -416,7 +422,9 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 ```swift
 // Swift
 var v: Int { fatalError() /* -> Never */ }
+
 func f() -> Any { fatalError() /* -> Never */ }
+
 // ただし、これはできない (Never は Int の sub type でない)
 let i: Int = Int(exactly: 1) ?? fatalError()
 ```
@@ -436,9 +444,12 @@ val i: Int = "1".toIntOrNull() ?: TODO() /* Never */
 
 ```kotlin
 val numbers: List<Int> = EmptyList /* List<Nothing> */
+
 val anys: List<Any?> = EmptyList /* List<Nothing> */
 ```
-@[1-2](そして、`EmptyList` は singleton...完璧だ...)
+@[1-3](そして、`EmptyList` は singleton...完璧だ...)
+
++++?code=assets/codes/listOf.kt
 
 ---
 
