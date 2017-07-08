@@ -438,7 +438,7 @@ var v: C<out T> = ...
 * Swift とは違う文明が築き上げられている (今回は氷山の一角)
   * Type hierarchy
   * Variance
-  * Singleton サポート
+  * Singleton サポート
   * Delegation
   * annotation
   * ...
