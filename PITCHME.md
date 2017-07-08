@@ -196,7 +196,8 @@ public interface MutableList<E> : List<E>, MutableCollection<E> {
 
     override fun remove(element: E): Boolean
 ```
-@[6](`List<E>` を継承した変更可能な `List`)
+@[6]
+`List<E>` を継承した変更可能な `List`
 <aside>Objective-C も同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
 
 +++
