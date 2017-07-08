@@ -221,9 +221,11 @@ let array = [1, 2]
 // Kotlin
 val mutableList: MutableList<Int> = mutableListOf(1, 2)
 val list: List<Int> = mutableList  // [1, 2]
+
 mutableList.add(3)
 print(list)  // [1, 2, 3]
 ```
+@[6](immutable 性が壊れる)
 有名な問題点
 
 +++
