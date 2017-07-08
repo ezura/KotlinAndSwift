@@ -1,3 +1,3 @@
 # KotlinAndSwift
 
-[slide](https://gitpitch.com/ezura/KotlinAndSwift/master?grs=github&t=beige)
+[![GitPitch](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/ezura/KotlinAndSwift/master?grs=github&t=beige)
