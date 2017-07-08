@@ -220,9 +220,9 @@ let array = [1, 2]
 ```kotlin
 // Kotlin
 val mutableList: MutableList<Int> = mutableListOf(1, 2)
-    val list: List<Int> = mutableList  // [1, 2]
-    mutableList.add(3)
-    print(list)  // [1, 2, 3]
+val list: List<Int> = mutableList  // [1, 2]
+mutableList.add(3)
+print(list)  // [1, 2, 3]
 ```
 有名な問題点
 
