@@ -469,6 +469,8 @@ E がどんな type に対しても `emptyList`は sub type になれる  
   * ...
 * Swift の素晴らしさも Kotlin の素晴らしさも、それぞれあった
 
++++
+
 ### とても参考になった資料 (順不同)
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/)
 * [Kotlinスタートブック](http://www.ric.co.jp/book/contents/book_1039.html)
