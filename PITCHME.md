@@ -326,13 +326,30 @@ let i: Int = Int(exactly: 1) ?? fatalError()
 
 +++
 
+```kotlin
+// Kotlin
+val i: Int = "1".toIntOrNull() ?: TODO() /* Never */
+```
+@[1](ということは…)
+
++++?code=assets/codes/list.kt
+@[6](`List<out E>`, `Nothing`)
+
++++
+
+```kotlin
+val numbers: List<Int> = EmptyList /* List<Nothing> */
+val anys: List<Any?> = EmptyList /* List<Nothing> */
+```
+@[1-2](そして、`EmptyList` は singleton...完璧だ...)
+
++++
+
 Any は
 * 全ての型の super type
 * **class**
 
 +++
-
-
 
 ---
 
