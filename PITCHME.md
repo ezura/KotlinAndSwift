@@ -26,12 +26,11 @@ Swift と Kotlin
 +++
 
 似てるの？？
-都市伝説？？
 
 +++
 
 確かに、構文が似てる部分もある
-<aside>初めて見たときも親しみやすかった印象</aside>
+<aside>初めてコードを見たときも親しみやすかった印象</aside>
 
 +++
 
@@ -54,7 +53,7 @@ Swift と Kotlin
 ~~一歩進むたびに~~  
 もはや足をあげるところから  
 違いに出会う世界 😇  
-(設計の面で…)
+(文化的な観点で)
 
 +++
 
@@ -224,6 +223,11 @@ val mutableList: MutableList<Int> = mutableListOf(1, 2)
 ```
 有名な問題点
 
+
++++
+
+Swift では Array が Value type なので回避できている…？
+
 +++
 
 Kotlin の Any は
@@ -232,16 +236,10 @@ Kotlin の Any は
 
 +++
 
-Swift では Array が Value type なので回避できている…！
-
-+++
-
 ### 余談
 [Project Valhalla](http://openjdk.java.net/projects/valhalla/) によって Value Type がサポートされる？
 
----
-
-+++?code=assets/codes/listOf.kt
+---?code=assets/codes/listOf.kt
 @[6](emptyList...?)
 
 +++
@@ -367,7 +365,7 @@ var v: C<out T> = ...
 
 +++?code=assets/codes/list.kt
 @[6](`out`)
-@[6](List<E> ← List<E の subtype>)
+@[6](List\<E\> ← List\<E の subtype\>)
 @[6](`Nothing`...?)
 
 +++
