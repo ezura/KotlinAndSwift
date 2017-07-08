@@ -132,6 +132,7 @@ val v = source.toDestination()
 +++
 #### 超余談
 ```kotlin
+// Kotlin
 fun Destination(v: Source): Destination {
     ...
 }
@@ -203,7 +204,7 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 +++
 
 Swift の Array と同様、  
-型パラメータの部分は要素と予想できる
+型パラメータの部分は要素
 
 +++?code=assets/codes/list.kt
 @[6](`out`...?)
@@ -235,20 +236,18 @@ Swift の Array と同様、
 
 ### covariance の例
 
-`Any` <- `Int`  
+`Any` ← `Int`  
 のとき  
-`Array<Any>` <- `Array<Int>`
+`Array<Any>` ← `Array<Int>`
 <aside>Swift の Array</aside>
 
 +++
 
-```
-
 ### contravariance の例
 
-`Any` <- `Int`  
+`Any` ← `Int`  
 のとき  
-`(Int) -> T` <- `(Any) -> T`
+`(Int) -> T` ← `(Any) -> T`
 
 +++
 
@@ -258,13 +257,13 @@ Swift の Array と同様、
 let outF: () -> Any = { () -> Int in return 1 }
 let inF: (Int) -> Void = { (v: Any) -> Void in print(v) }
 ```
-@[1](out)
-@[2](in)
+@[1](型の持つ性質を包含する型なら代替できる)
+@[2](型の持つ性質を超えない型なら代替できる)
 
 +++
 
-* Swift だと、暗黙的に提供されているもののみ適応
-* Kotlin だと指定できる！
+* Swift だと、提供されている型(function type 含む)のみ適応
+* Kotlin だと自分で指定できる！
 
 +++
 
@@ -281,13 +280,10 @@ inoutF(v)  // error
 ```
 @[2]
 
----
-
-### 具体的な違い
-  * Type hierarchy
-  * ~~Value type~~
-  * Variant
-  * Singleton
++++?code=assets/codes/list.kt
+@[6](`out`)
+@[6](List<E> ← List<E の subtype>)
+@[6](`Nothing`...?)
 
 +++
 
@@ -304,41 +300,48 @@ inoutF(v)  // error
 +++
 
 * Any: 全ての型の super type
-* Nothing: 全ての型の sub type
+* Nothing: 全ての型の sub type (instance は作れない)
 
 +++
 
 ### Any
-* kotlin
-  - class
-* Swift
-  - 空の protocol (-> Non-nominal type)
-  
+* Kotlin: class
+* Swift: 予約語。実態は空の protocol (-> Non-nominal type)
+
++++
+
+### Notthing
+* Kotlin: 全ての型の sub type
+* Swift: ない (近い挙動は `Never`)
+
++++
+
+```swift
+// Swift
+var v: Int { fatalError() /* -> Never */ }
+func f() -> Any { fatalError() /* -> Never */ }
+// ただし、これはできない (Never は Int の sub type でない)
+let i: Int = Int(exactly: 1) ?? fatalError()
+```
+
 +++
 
 Any は
 * 全ての型の super type
 * **class**
 
----
-
-### Singleton
-
 +++
-
-Singleton を言語の機能で提供
-
-+++
-
-```kotlin
-object Type { ... }
-```
 
 
 
 ---
 
-いくつかの違い
+### まとめ
+
++++
+
+* 構文は Swift と似ている部分も多い
+* Swift とは違う文明が築き上げられている (今回は氷山の一角)
 
 ---
 
