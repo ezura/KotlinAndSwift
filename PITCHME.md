@@ -330,7 +330,7 @@ let i: Int = Int(exactly: 1) ?? fatalError()
 // Kotlin
 val i: Int = "1".toIntOrNull() ?: TODO() /* Never */
 ```
-@[1](ということは…)
+@[1-2](ということは…)
 
 +++?code=assets/codes/list.kt
 @[6](`List<out E>`, `Nothing`)
@@ -345,11 +345,88 @@ val anys: List<Any?> = EmptyList /* List<Nothing> */
 
 +++
 
-Any は
-* 全ての型の super type
-* **class**
+```kotlin
+// kotlin
+/** Returns a new read-only list of given elements. */
+fun <T> listOf(vararg elements: T): List<T> {
+    if (elements.size > 0) {
+        elements.asList() 
+    } else {
+        emptyList()
+    }
+}
+```
+@[3-9](察した)
+@[2](read-only list。変更したいときは？？)
 
 +++
+
+```swift
+// Swift
+// mutable array
+var array = [1, 2]
+array[0] = 0
+
+// immutable array
+let array = [1, 2]
+// array[0] = 0 // ❗️error
+```
+<aside>Swift の Array は Value type</aside>
+
++++
+
+Kotlin の Any は
+* 全ての型の super type
+* **class** ← ‼️
+
++++
+
+```kotlin
+// Kotlin
+/**
+ * A generic ordered collection of elements that supports adding and removing elements.
+ * @param E the type of elements contained in the list. The mutable list is invariant on its element type.
+ */
+public interface MutableList<E> : List<E>, MutableCollection<E> {
+    // Modification Operations
+    override fun add(element: E): Boolean
+
+    override fun remove(element: E): Boolean
+```
+@[6](`List<E>` を継承した変更可能な `List`)
+@[6](`List` と違い、`E` は不変)
+<aside>Objective-C も同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
+
++++
+
+```kotlin
+// Kotlin
+val mutableList: MutableList<Int> = mutableListOf(1, 2)
+    val list: List<Int> = mutableList  // [1, 2]
+    mutableList.add(3)
+    print(list)  // [1, 2, 3]
+```
+有名な問題点
+
++++
+
+Swift では Array が Value type なので発生しない  
+`inout` も封じられている
+
++++
+
+### 余談
+[Project Valhalla](http://openjdk.java.net/projects/valhalla/) で Value Type がサポートされる？
+
++++
+
+```kotlin
+class A<in T> { ... }
+fun f(v: B<in T>): T { ... }
+var v: C<out T> = ...
+```
+
+自分で Variance を指定できるのは表現の幅が広がる (気をつける必要はあるけれど)
 
 ---
 
@@ -359,10 +436,15 @@ Any は
 
 * 構文は Swift と似ている部分も多い
 * Swift とは違う文明が築き上げられている (今回は氷山の一角)
+  * Type hierarchy
+  * Variance
+  * Singleton サポート
+  * Delegation
+  * annotation
+  * ...
 
----
-
-### とても参考になったサイト・記事
+### とても参考になった本・サイト・記事 (順不同)
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/)
+* [Kotlinスタートブック](http://www.ric.co.jp/book/contents/book_1039.html)
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
 * [Android開発を受注したからKotlinをガッツリ使ってみたら最高だった](http://qiita.com/omochimetaru/items/98e015b0b694dd97f323)
