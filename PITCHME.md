@@ -228,7 +228,8 @@ print(list)  // [1, 2, 3]
 
 +++
 
-Swift では Array が Value type なので回避できている…？
+Swift では Array を Value type で実装することで回避できている…？  
+Value type すごい…！
 
 +++
 
@@ -239,7 +240,7 @@ Kotlin の Any は
 +++
 
 ### 余談
-[Project Valhalla](http://openjdk.java.net/projects/valhalla/) によって Value Type がサポートされる？
+[Project Valhalla](http://openjdk.java.net/projects/valhalla/) によって Value type がサポートされる？
 
 ---?code=assets/codes/listOf.kt
 @[2](`List<E>`)
@@ -319,7 +320,9 @@ inoutF(v)  // error
 @[2]
 
 +++?code=assets/codes/list.kt
-要素に対して `out` 指定することによって
+要素に対して `out` 指定することによって  
+`List<E>` ← `List<E の subtype>`  
+の関係が生まれる
 
 +++
 ```swift
@@ -340,12 +343,13 @@ var v: C<out T> = ...
 
 自分で Variance を指定できるのは表現の幅が広がる！
 
-+++?code=assets/codes/list.kt
-@[6](`out`)
-@[6](`List<E>` ← `List<E の subtype>`)
-@[6](`Nothing`...?)
+---?code=assets/codes/list.kt
+さかのぼって
 
----
++++?code=assets/codes/listOf.kt
+@[6](`emptyList`...?)
+
++++
 
 ```kotlin
 /** Returns an empty read-only list.  The returned list is serializable (JVM). */
@@ -446,11 +450,11 @@ val anys: List<Any?> = EmptyList /* List<Nothing> */
   * Variance
   * Singleton サポート
   * Delegation
-  * annotation
+  * Annotation
   * ...
 * Swift の素晴らしさも Kotlin の素晴らしさも、それぞれあった
 
-### とても参考になった本・サイト・記事 (順不同)
+### とても参考になった資料 (順不同)
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/)
 * [Kotlinスタートブック](http://www.ric.co.jp/book/contents/book_1039.html)
 * [JavaプログラマのためのKotlin入門](http://qiita.com/koher/items/bcc58c01c6ff2ece658f)
