@@ -129,6 +129,7 @@ val v = source.toDestination()
 <aside>余談: Kotlin は extension で constructor を作れない)</aside>
 
 +++
+
 #### 超余談
 ```kotlin
 // Kotlin
@@ -194,7 +195,7 @@ public interface MutableList<E> : List<E>, MutableCollection<E> {
 
     override fun remove(element: E): Boolean
 ```
-@[6](`List<E>` を継承した変更可能な `List`)
+@[6](`List\<E\>` を継承した変更可能な `List`)
 <aside>Objective-C も同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
 
 +++
@@ -223,7 +224,6 @@ val mutableList: MutableList<Int> = mutableListOf(1, 2)
 ```
 有名な問題点
 
-
 +++
 
 Swift では Array が Value type なので回避できている…？
@@ -240,43 +240,7 @@ Kotlin の Any は
 [Project Valhalla](http://openjdk.java.net/projects/valhalla/) によって Value Type がサポートされる？
 
 ---?code=assets/codes/listOf.kt
-@[6](emptyList...?)
-
-+++
-
-```kotlin
-/** Returns an empty read-only list.  The returned list is serializable (JVM). */
-public fun <T> emptyList(): List<T> = EmptyList
-```
-
-+++
-
-```kotlin
-object EmptyList : List<Nothing>, Serializable, RandomAccess {
-// 略
-}
-```
-@[1](`object`...?)
-
-+++
-
-### `Object`
-* Singleton
-* constractor が指定できない以外、class と同様の機能を持てる
-
-+++
-
-```kotlin
-object EmptyList : List<Nothing>, Serializable, RandomAccess {
-// 略
-}
-```
-@[1](`List<Nothing>`)
-
-+++
-
-Swift の Array と同様、  
-型パラメータの部分は要素
+@[2](List\<E\>)
 
 +++?code=assets/codes/list.kt
 @[6](`out`...?)
@@ -289,8 +253,8 @@ Swift の Array と同様、
 
 ### Variance
 * invariant
-* covariant
-* contravariant
+* covariant (out) 
+* contravariant (in)
 
 +++
 
@@ -352,6 +316,17 @@ inoutF(v)  // error
 ```
 @[2]
 
++++?code=assets/codes/list.kt
+要素に対して `out` 指定することによって
+
++++
+```swift
+// Swift
+let array: Array<Any> = [] as Array<Int>
+
+let myType: MyType<Any> = MyType<Int>() // !!: error
+```
+Swift での Array のように要素の型を柔軟に扱える
 
 +++
 
@@ -367,6 +342,37 @@ var v: C<out T> = ...
 @[6](`out`)
 @[6](List\<E\> ← List\<E の subtype\>)
 @[6](`Nothing`...?)
+
+---
+
+```kotlin
+/** Returns an empty read-only list.  The returned list is serializable (JVM). */
+public fun <T> emptyList(): List<T> = EmptyList
+```
+
++++
+
+```kotlin
+object EmptyList : List<Nothing>, Serializable, RandomAccess {
+// 略
+}
+```
+@[1](`object`...?)
+
++++
+
+### `Object`
+* Singleton
+* constractor が指定できない以外、class と同様の機能を持てる
+
++++
+
+```kotlin
+object EmptyList : List<Nothing>, Serializable, RandomAccess {
+// 略
+}
+```
+@[1](`List\<Nothing\>`)
 
 +++
 
@@ -440,6 +446,7 @@ val anys: List<Any?> = EmptyList /* List<Nothing> */
   * Delegation
   * annotation
   * ...
+* Swift の素晴らしさも Kotlin の素晴らしさも、それぞれあった
 
 ### とても参考になった本・サイト・記事 (順不同)
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/)
