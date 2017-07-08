@@ -392,6 +392,7 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 #### Type hierarchy
 
 ![Type hierarchy](assets/images/TypeHierarchy.png)
+<aside>Optional も含めると `Any?` が `Any` の super type</aside>
 
 +++
 
