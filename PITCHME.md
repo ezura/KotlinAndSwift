@@ -447,9 +447,11 @@ val numbers: List<Int> = EmptyList /* List<Nothing> */
 
 val anys: List<Any?> = EmptyList /* List<Nothing> */
 ```
-@[1-3](そして、`EmptyList` は singleton...完璧だ...)
 
 +++?code=assets/codes/listOf.kt
+E がどんな type に対しても `emptyList`は sub type になれる  
+そして、`EmptyList` は singleton...  
+か、完璧だ...！
 
 ---
 
