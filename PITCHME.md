@@ -225,7 +225,7 @@ val list: List<Int> = mutableList  // [1, 2]
 mutableList.add(3)
 print(list)  // [1, 2, 3]
 ```
-@[6](immutable 性が壊れる(だから "read-only" と書かれていて、"immutable" とは書かれてないのかな…))
+@[6](immutable 性が壊れる\(だから "read-only" と書かれていて、"immutable" とは書かれてないのかな…\))
 有名な問題点
 
 +++
