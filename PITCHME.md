@@ -225,7 +225,7 @@ val list: List<Int> = mutableList  // [1, 2]
 mutableList.add(3)
 print(list)  // [1, 2, 3]
 ```
-@[6](immutable 性が壊れる)
+@[6](immutable 性が壊れる(だから "get only" とだけ書かれてるのかな…))
 有名な問題点
 
 +++
