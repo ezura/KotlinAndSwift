@@ -68,7 +68,7 @@ Swift と Kotlin
 * 標準ライブラリ 有名観光地ツアー
   * Type hierarchy
   * Top Type: class Any
-  * Variant
+  * Variance
   * Singleton
 
 ---
@@ -216,25 +216,25 @@ Swift の Array と同様、
 +++
 
 ### Variance
-* invariance
-* covariance
-* contravariance
+* invariant
+* covariant
+* contravariant
 
 +++
 
-### invariance
+### invariant
 
 `Any` <- `Int`  
 のとき  
 `MyBox<Any>` -❌- `MyBox<Int>`
 
 <aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
-<aside>ただし、`intout` 指定のときは `Array` も invariance になる</aside>
+<aside>ただし、`intout` 指定のときは `Array` も invariant になる</aside>
 <aside>(Kotlin の　Array は要素に対して不変)</aside>
 
 +++
 
-### covariance の例
+### covariant の例
 
 `Any` ← `Int`  
 のとき  
@@ -243,7 +243,7 @@ Swift の Array と同様、
 
 +++
 
-### contravariance の例
+### contravariant の例
 
 `Any` ← `Int`  
 のとき  
