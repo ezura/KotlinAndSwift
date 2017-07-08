@@ -90,7 +90,8 @@ Swift と Kotlin
 
 +++
 
-Swift よりもオブジェクト指向寄りな設計がところどころで見えるような…？  
+Swift よりもオブジェクト指向寄りな設計が  
+ところどころで見えるような…？  
 (注: 私見)
 
 +++
@@ -195,7 +196,7 @@ public interface MutableList<E> : List<E>, MutableCollection<E> {
 
     override fun remove(element: E): Boolean
 ```
-@[6](`List\<E\>` を継承した変更可能な `List`)
+@[6](`List<E>` を継承した変更可能な `List`)
 <aside>Objective-C も同様な構造 (ただし objc の場合、要素は何でも入る)</aside>
 
 +++
@@ -240,7 +241,7 @@ Kotlin の Any は
 [Project Valhalla](http://openjdk.java.net/projects/valhalla/) によって Value Type がサポートされる？
 
 ---?code=assets/codes/listOf.kt
-@[2](List\<E\>)
+@[2](`List<E>`)
 
 +++?code=assets/codes/list.kt
 @[6](`out`...?)
@@ -340,7 +341,7 @@ var v: C<out T> = ...
 
 +++?code=assets/codes/list.kt
 @[6](`out`)
-@[6](List\<E\> ← List\<E の subtype\>)
+@[6](`List<E>` ← `List<E の subtype>`)
 @[6](`Nothing`...?)
 
 ---
@@ -372,7 +373,7 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 // 略
 }
 ```
-@[1](`List\<Nothing\>`)
+@[1](`List<Nothing>`)
 
 +++
 
