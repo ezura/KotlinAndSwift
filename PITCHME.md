@@ -66,7 +66,7 @@ Swift と Kotlin
 * Kotlin はどんな言語？
 * 標準ライブラリ 有名観光地ツアー
   * Type hierarchy
-  * Top Type: class Any
+  * Root type: class Any
   * Variance
   * Singleton
 
