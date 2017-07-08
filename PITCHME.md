@@ -190,7 +190,7 @@ object EmptyList : List<Nothing>, Serializable, RandomAccess {
 
 ### `Object`
 * Singleton
-* constractor が指定できない以外、class と同様の機能
+* constractor が指定できない以外、class と同様の機能を持てる
 
 +++
 
@@ -226,7 +226,7 @@ Swift の Array と同様、
 
 `Any` <- `Int`  
 のとき  
-`MyBox<Any>` ~~<-~~ `MyBox<Int>`
+`MyBox<Any>` -❌- `MyBox<Int>`
 
 <aside>Swift は基本的にはこれ (Array, Optional 等、一部の型以外)</aside>
 <aside>ただし、`intout` 指定のときは `Array` も invariance になる</aside>
